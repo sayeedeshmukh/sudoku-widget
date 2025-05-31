@@ -1,0 +1,104 @@
+
+#drag-handle {
+  -webkit-app-region: drag;
+  height: 35px;
+  background-color: #7e7433;
+  margin: -20px -20px 20px -20px;
+  border-radius: 0 0 5px 5px ;
+  cursor: move;
+}
+
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #fff4b0;
+    padding: 20px;
+    color: #333;
+    width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* Rest of your existing CSS remains the same */
+button {
+    -webkit-app-region: no-drag;
+    background-color: #7e7433;
+    color: #fff4b0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+button:hover {
+    background-color: #6a622b;
+}
+
+#sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-gap: 2px;
+    margin: 10px auto;
+    width: fit-content;
+}
+
+input {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input:read-only {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Vertical thick borders */
+input:nth-child(9n+3),
+input:nth-child(9n+6) {
+    border-right: 2px solid #7e7433 !important;
+}
+
+/* Horizontal thick borders */
+input:nth-child(n+19):nth-child(-n+27),
+input:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #7e7433 !important;
+}
+
+/* Outer borders */
+input:nth-child(-n+9) {
+    border-top: 2px solid #7e7433 !important;
+}
+
+input:nth-child(9n+1) {
+    border-left: 2px solid #7e7433 !important;
+}
+
+input:nth-child(n+73) {
+    border-bottom: 2px solid #7e7433 !important;
+}
+
+input:nth-child(9n) {
+    border-right: 2px solid #7e7433 !important;
+}
+
+
+h1 {
+    color: #7e7433;
+}
+
+#date {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
